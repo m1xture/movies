@@ -1,0 +1,42 @@
+.recomendations__item {
+  font-family: "Lato";
+  width: 220px;
+  position: relative;
+  border-radius: 10px;
+  transition-duration: 250ms;
+  transition-delay: 50ms;
+  &:hover {
+    cursor: pointer;
+    background-color: rgb(46, 46, 46);
+  }
+}
+.recomendations-wrapper {
+  overflow: hidden;
+  height: 300px;
+  width: 100%;
+  /* margin-bottom: 15px; */
+  border-radius: 10px;
+}
+.recomendations__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* height: 100%;/ */
+}
+.recomendation__item-box {
+  padding: 15px 10px;
+}
+.recomendations__subtitle {
+  font-size: 16px;
+  max-width: 190px;
+  color: #e8e8e8;
+  text-wrap: balance;
+}
+.recomendations__score {
+  font-family: "Martel Sans";
+  font-weight: 600;
+  color: #e8e8e855;
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+}
