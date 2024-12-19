@@ -1,0 +1,23 @@
+.tips {
+  position: fixed;
+  background-color: rgb(53, 53, 53);
+  font-family: "Martel Sans";
+  padding: 15px 20px;
+  border-radius: 10px;
+  outline: 2px solid rgb(124, 124, 124);
+  box-shadow: 0px 0px 3px 1px rgba(109, 109, 109, 0.69);
+}
+
+.tips__item {
+  width: 100%;  
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.tips__item:first-child {
+  margin-bottom: 15px;
+}
+.tips__text {
+  font-size: 14px;
+}

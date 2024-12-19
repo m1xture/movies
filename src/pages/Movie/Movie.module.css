@@ -1,0 +1,10 @@
+.details {
+  padding-top: 60px;
+  padding-bottom: 30px;
+}
+.details [data-details-container] {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  /* align-items: center; */
+}

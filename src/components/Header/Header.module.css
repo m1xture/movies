@@ -1,0 +1,11 @@
+.header {
+  padding-top: 25px;
+  padding-bottom: 25px;
+  outline: 1.5px solid gray;
+}
+.header__nav {
+  display: flex;
+  align-items: center;
+  padding-left: 170px;
+  gap: 20px;
+}

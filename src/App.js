@@ -3,6 +3,7 @@ import Home from "./pages/Home/Home";
 import Favs from "./pages/Favs/Favs";
 import Recs from "./pages/Recs/Recs";
 import Movie from "./pages/Movie/Movie";
+import Producers from "./pages/Producers/Producers";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/movies" element={<Recs />} />
         <Route path="/movies/:id" element={<Movie />} />
+        <Route path="/producers/:id" element={<Producers />} />
         <Route path="/favs" element={<Favs />} />
       </Routes>
     </div>

@@ -25,7 +25,13 @@ button {
   padding-right: 30px;
   padding-left: 30px;
 }
-
+header a {
+  color: #e8e8e8;
+  font-family: "Space Mono";
+}
+.active {
+  color: #e8e8e8;
+}
 /* ::selection {
   background-color: var(--border-color);
 } */

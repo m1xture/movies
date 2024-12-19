@@ -1,0 +1,96 @@
+.details-box {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+}
+.details__photo {
+  margin-right: auto;
+  border-radius: 8px;
+}
+.details__title {
+  margin-top: 20px;
+  font-size: 40px;
+  margin-right: auto;
+  text-wrap: balance;
+  margin-bottom: 5px;
+  font-weight: 700;
+  font-family: "Lato";
+}
+.details__subtitle {
+  font-size: 18px;
+  opacity: 0.65;
+  margin-right: auto;
+  text-wrap: balance;
+  font-family: "Lato";
+}
+.details-block {
+  display: flex;
+  flex-direction: column;
+  max-width: 650px;
+}
+.information {
+  /* padding-bottom: 20px; */
+  margin-bottom: 20px;
+}
+.information__title {
+  font-size: 28px;
+  margin-bottom: 15px;
+  font-weight: 700;
+  font-family: "Lato";
+}
+.information__item {
+  margin-bottom: 5px;
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.information__text {
+  font-size: 20px;
+  font-weight: 700;
+  & a {
+    color: inherit;
+  }
+}
+.information__text--accent {
+  font-weight: 400;
+}
+[data-studio-name] {
+  font-style: italic;
+  text-decoration: underline;
+  transition-duration: 250ms;
+  transition-delay: 50ms;
+  &:hover {
+    cursor: pointer;
+    color: rgb(88, 82, 235);
+  }
+}
+.score {
+  background-color: rgb(53, 53, 53);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px;
+  margin-bottom: 30px;
+}
+.score__title {
+  font-weight: 700;
+  font-family: "Lato";
+  font-size: 24px;
+}
+.score__text {
+  font-weight: 500;
+  font-size: 20px;
+  font-family: "Lato";
+}
+.description__title {
+  font-family: "Lato";
+  font-weight: 700;
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+.description__desc {
+  font-family: "Space Mono";
+  line-height: 1.55;
+}

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import css from "./MovieDetails.module.css";
 import axios from "../../axiosConfig";
+import { NavLink } from "react-router-dom";
 
 const MovieDetails = ({ id }) => {
   const [movie, setMovie] = useState({});
@@ -36,7 +37,7 @@ const MovieDetails = ({ id }) => {
                   <p className={css.information__text}>
                     Episodes:
                     <span className={css["information__text--accent"]}>
-                      {movie.episodes}
+                      {" " + movie.episodes.toString()}
                     </span>
                   </p>
                 </li>
@@ -44,7 +45,7 @@ const MovieDetails = ({ id }) => {
                   <p className={css.information__text}>
                     Episode duration:
                     <span className={css["information__text--accent"]}>
-                      {movie.duration.replace("per ep", "")}
+                      {" " + movie.duration.replace("per ep", "")}
                     </span>
                   </p>
                 </li>
@@ -52,13 +53,13 @@ const MovieDetails = ({ id }) => {
                   <p className={css.information__text}>
                     Status:
                     <span className={css["information__text--accent"]}>
-                      {movie.status.toLowerCase().replace("airing", "")}
+                      {" " + movie.status.toLowerCase().replace("airing", "")}
                     </span>
                   </p>
                 </li>
                 <li className={css.information__item}>
                   <p className={css.information__text}>
-                    Genres:
+                    Genres:{" "}
                     <span className={css["information__text--accent"]}>
                       {movie.genres.length > 0
                         ? movie.genres
@@ -70,7 +71,7 @@ const MovieDetails = ({ id }) => {
                 </li>
                 <li className={css.information__item}>
                   <p className={css.information__text}>
-                    Themes:
+                    Themes:{" "}
                     <span className={css["information__text--accent"]}>
                       {movie.themes.length > 0
                         ? movie.themes
@@ -84,16 +85,21 @@ const MovieDetails = ({ id }) => {
                   <p className={css.information__text}>
                     Rating:
                     <span className={css["information__text--accent"]}>
-                      {movie.rating}
+                      {" " + movie.rating.toString()}
                     </span>
                   </p>
                 </li>
                 <li className={css.information__item}>
                   <p className={css.information__text}>
-                    Studio:
-                    <span className={css["information__text--accent"]}>
-                      {movie.studios[0] ? movie.studios[0].name : "--"}
-                    </span>
+                    Studio:{" "}
+                    <NavLink to={`/producers/${movie.studios[0].mal_id}`}>
+                      <span
+                        className={css["information__text--accent"]}
+                        data-studio-name
+                      >
+                        {movie.studios[0] ? movie.studios[0].name : "--"}
+                      </span>
+                    </NavLink>
                   </p>
                 </li>
               </ul>
@@ -106,7 +112,9 @@ const MovieDetails = ({ id }) => {
             </div>
             <div className={css.description}>
               <h2 className={css.description__title}>Description</h2>
-              <p className={css.description__desc}>{movie.synopsis}</p>
+              <p className={css.description__desc}>
+                {movie.synopsis.slice(0, movie.synopsis.indexOf("["))}
+              </p>
             </div>
           </div>
         </>
