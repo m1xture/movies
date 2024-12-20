@@ -5,9 +5,11 @@ import Recs from "./pages/Recs/Recs";
 import Movie from "./pages/Movie/Movie";
 import Producers from "./pages/Producers/Producers";
 
+
 function App() {
   return (
     <div>
+      
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/movies" element={<Recs />} />

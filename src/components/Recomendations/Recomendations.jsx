@@ -4,6 +4,7 @@ import fetchData from "../../utils/fetchData.js";
 import axios from "../../axiosConfig.js";
 import css from "./Recomendations.module.css";
 import CardTips from "../CardTips/CardTips.jsx";
+import Loader from "../Loader/Loader.jsx";
 
 const Recomendations = () => {
   const [data, setData] = useState([]);
@@ -57,7 +58,7 @@ const Recomendations = () => {
       if (entry.isIntersecting) {
         try {
           setPage((prevPage) => prevPage + 1);
-          console.log("intersecting");
+          // console.log("intersecting");
         } catch (err) {
           console.log(err);
         }
@@ -73,12 +74,13 @@ const Recomendations = () => {
         observer.observe(targetElem.current);
       }
     }
-    console.log("alalalal");
+    // console.log("alalalal");
     getData();
   }, [page]);
 
   return (
     <>
+      {!data[0] && <Loader />}
       <ul
         className={css.recomendations__list}
         onContextMenu={handleRightCardMouseClick}
@@ -95,7 +97,7 @@ const Recomendations = () => {
             />
           ))}
       </ul>
-      <button onClick={handleViewMore} ref={targetElem}>
+      <button onClick={handleViewMore} ref={targetElem} style={{ opacity: 0 }}>
         View more
       </button>
       {focusedOn.id && (

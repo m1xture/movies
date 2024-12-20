@@ -1,6 +1,7 @@
 .header {
-  padding-top: 25px;
-  padding-bottom: 25px;
+  /* padding-top: 25px; */
+  padding-top: 3.5vh;
+  padding-bottom: 3.5vh;
   outline: 1.5px solid gray;
 }
 .header__nav {

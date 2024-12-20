@@ -2,19 +2,25 @@ import { useEffect, useState } from "react";
 import css from "./MovieDetails.module.css";
 import axios from "../../axiosConfig";
 import { NavLink } from "react-router-dom";
+import Loader from "../Loader/Loader";
+import { toast } from "react-toastify";
 
 const MovieDetails = ({ id }) => {
   const [movie, setMovie] = useState({});
   useEffect(() => {
     async function fetchData() {
-      const data = await axios.get(`/anime/${id}/full`);
-      setMovie(data.data.data);
+      try {
+        const data = await axios.get(`/anime/${id}/full`);
+        setMovie(data.data.data);
+      } catch (err) {
+        if (err.status === 429) toast.error("Try later (429)");
+      }
     }
     fetchData();
   }, []);
   return (
     <>
-      {movie.mal_id && (
+      {movie.mal_id ? (
         <>
           <div className={css["details-box"]}>
             <img
@@ -118,6 +124,8 @@ const MovieDetails = ({ id }) => {
             </div>
           </div>
         </>
+      ) : (
+        <Loader />
       )}
     </>
   );

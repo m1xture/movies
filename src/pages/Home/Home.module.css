@@ -1,0 +1,55 @@
+.hero__video {
+  /* position: absolute;
+  top: -30px;
+  left: -200px; */
+  /* z-index: -2; */
+  width: 100vw;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero-overlay {
+  position: absolute;
+  z-index: -1;
+  width: 100vw;
+  height: 90vh;
+  /* height: 100%; */
+  overflow: hidden;
+  background-color: black;
+  opacity: 0.5;
+  display: flex;
+  left: 0;
+  /* align-items: center; */
+  justify-content: center;
+}
+.hero {
+  /* height: 80vh; */
+  overflow: hidden;
+}
+.hero-box {
+  padding-top: 30vh;
+}
+.hero [data-hero-container] {
+  /* overflow: hidden; */
+  /* height: 80vh; */
+}
+.hero__title {
+  font-size: 48px;
+  font-family: "Lato";
+  font-weight: 800;
+  margin-bottom: 30px;
+}
+.hero__text {
+  text-wrap: balance;
+  font-family: "Martel Sans";
+  font-size: 22px;
+  line-height: 1.5;
+  max-width: 40vw;
+  & a {
+    color: inherit;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

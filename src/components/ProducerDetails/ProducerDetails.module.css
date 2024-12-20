@@ -1,0 +1,35 @@
+.prod-block {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.prod-box {
+  position: relative;
+}
+.prod__title {
+  font-size: 40px;
+  font-family: "Lato";
+  font-weight: 800;
+  margin-bottom: 20px;
+  max-width: 30vw;
+  text-wrap: balance;
+}
+.prod__text {
+  font-family: "Martel Sans";
+  font-size: 22px;
+  line-height: 1.5;
+  text-wrap: balance;
+  max-width: 60vw;
+}
+.prod__subtext {
+  opacity: 0.55;
+  position: absolute;
+  right: 60px;
+  top: 10px;
+  font-family: "Space Mono";
+}
+.prod__img {
+  width: 15vw;
+  border-radius: 4px;
+  /* object-fit: contain; */
+}
