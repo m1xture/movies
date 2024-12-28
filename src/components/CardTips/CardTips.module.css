@@ -2,6 +2,7 @@
   position: fixed;
   background-color: rgb(53, 53, 53);
   font-family: "Martel Sans";
+  z-index: 5;
   /* padding: 15px 20px; */
   border-radius: 10px;
   outline: 2px solid rgb(124, 124, 124);
