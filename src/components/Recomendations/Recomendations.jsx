@@ -30,9 +30,17 @@ const Recomendations = () => {
       e.preventDefault();
       document.addEventListener("click", handleOutsideClick);
       document.addEventListener("scroll", handleScroll);
+      const id =
+        e.target.nodeName === "LI" ? e.target.id : e.target.closest("li").id;
+      const fullMovieData =
+        data[data.findIndex((movie) => String(movie.mal_id) === id)];
       return setFocusedOn({
-        id:
-          e.target.nodeName === "LI" ? e.target.id : e.target.closest("li").id,
+        id,
+        icon: fullMovieData.images.webp.image_url,
+        title: fullMovieData.title_english
+          ? fullMovieData.title_english
+          : fullMovieData.title,
+        score: fullMovieData.score ? fullMovieData.score : 0,
         x: e.clientX,
         y: e.clientY,
       });
@@ -101,7 +109,14 @@ const Recomendations = () => {
         View more
       </button>
       {focusedOn.id && (
-        <CardTips id={focusedOn.id} x={focusedOn.x} y={focusedOn.y} />
+        <CardTips
+          id={focusedOn.id}
+          icon={focusedOn.icon}
+          title={focusedOn.title}
+          score={focusedOn.score}
+          x={focusedOn.x}
+          y={focusedOn.y}
+        />
       )}
     </>
   );

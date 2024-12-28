@@ -5,6 +5,21 @@ import { NavLink } from "react-router-dom";
 import Loader from "../Loader/Loader";
 import { toast } from "react-toastify";
 
+const months = [
+  "Jan",
+  "Feb",
+  "Mar",
+  "Apr",
+  "May",
+  "Jun",
+  "Jul",
+  "Aug",
+  "Sep",
+  "Oct",
+  "Nov",
+  "Dec",
+];
+
 const MovieDetails = ({ id }) => {
   const [movie, setMovie] = useState({});
   useEffect(() => {
@@ -60,6 +75,25 @@ const MovieDetails = ({ id }) => {
                     Status:
                     <span className={css["information__text--accent"]}>
                       {" " + movie.status.toLowerCase().replace("airing", "")}
+                      {movie.status.toLowerCase().replace(" airing", "") ===
+                        "finished" && (
+                        <span className={css.information__date}>
+                          [broadcast from{" "}
+                          {new Date(movie.aired?.from).getDate().toString() +
+                            " " +
+                            months[new Date(movie.aired?.from).getMonth()] +
+                            " " +
+                            new Date(movie.aired?.from)
+                              .getFullYear()
+                              .toString() +
+                            " "}{" "}
+                          to{" "}
+                          {` ${new Date(movie.aired?.to).getDate()} ${
+                            months[new Date(movie.aired?.to).getMonth()]
+                          } ${new Date(movie.aired?.to).getFullYear()}`}
+                          ]
+                        </span>
+                      )}
                     </span>
                   </p>
                 </li>
