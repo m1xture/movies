@@ -37,7 +37,7 @@ const RecomendationsItem = ({
               />
             </button>
           )}
-          <p className={css.recomendations__score}>{score.toFixed(1)}</p>
+          <p className={css.recomendations__score}>{score?.toFixed(1)}</p>
         </div>
       </NavLink>
     </li>

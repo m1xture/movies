@@ -4,6 +4,7 @@ import axios from "../../axiosConfig";
 import { NavLink } from "react-router-dom";
 import Loader from "../Loader/Loader";
 import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 const months = [
   "Jan",
@@ -22,6 +23,10 @@ const months = [
 
 const MovieDetails = ({ id }) => {
   const [movie, setMovie] = useState({});
+  const navigate = useNavigate();
+  const cb = (e) => {
+    navigate(-1);
+  };
   useEffect(() => {
     async function fetchData() {
       try {
@@ -54,22 +59,26 @@ const MovieDetails = ({ id }) => {
             <div className={css.information}>
               <h2 className={css.information__title}>Information</h2>
               <ul className={css.information__list}>
-                <li className={css.information__item}>
-                  <p className={css.information__text}>
-                    Episodes:
-                    <span className={css["information__text--accent"]}>
-                      {" " + movie.episodes.toString()}
-                    </span>
-                  </p>
-                </li>
-                <li className={css.information__item}>
-                  <p className={css.information__text}>
-                    Episode duration:
-                    <span className={css["information__text--accent"]}>
-                      {" " + movie.duration.replace("per ep", "")}
-                    </span>
-                  </p>
-                </li>
+                {movie.episodes && (
+                  <li className={css.information__item}>
+                    <p className={css.information__text}>
+                      Episodes:
+                      <span className={css["information__text--accent"]}>
+                        {" " + movie.episodes.toString()}
+                      </span>
+                    </p>
+                  </li>
+                )}
+                {movie.duration && (
+                  <li className={css.information__item}>
+                    <p className={css.information__text}>
+                      Episode duration:
+                      <span className={css["information__text--accent"]}>
+                        {" " + movie.duration.replace("per ep", "")}
+                      </span>
+                    </p>
+                  </li>
+                )}
                 <li className={css.information__item}>
                   <p className={css.information__text}>
                     Status:
@@ -121,14 +130,16 @@ const MovieDetails = ({ id }) => {
                     </span>
                   </p>
                 </li>
-                <li className={css.information__item}>
-                  <p className={css.information__text}>
-                    Rating:
-                    <span className={css["information__text--accent"]}>
-                      {" " + movie.rating.toString()}
-                    </span>
-                  </p>
-                </li>
+                {movie.rating && (
+                  <li className={css.information__item}>
+                    <p className={css.information__text}>
+                      Rating:
+                      <span className={css["information__text--accent"]}>
+                        {" " + movie.rating.toString()}
+                      </span>
+                    </p>
+                  </li>
+                )}
                 <li className={css.information__item}>
                   <p className={css.information__text}>
                     Studio:{" "}

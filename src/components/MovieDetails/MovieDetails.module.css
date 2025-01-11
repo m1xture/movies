@@ -6,6 +6,7 @@
 .details__photo {
   margin-right: auto;
   border-radius: 8px;
+  max-width: 100%;
 }
 .details__title {
   margin-top: 20px;

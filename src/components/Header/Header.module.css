@@ -3,10 +3,23 @@
   padding-top: 3.5vh;
   padding-bottom: 3.5vh;
   outline: 1.5px solid gray;
+  & [data-header-container] {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
 }
 .header__nav {
   display: flex;
   align-items: center;
-  padding-left: 170px;
   gap: 20px;
+}
+.header__input {
+  background-color: rgb(74, 74, 74);
+  outline: none;
+  border: none;
+  padding: 5px 8px;
+  border-radius: 4px;
+  color: #e3e3e3;
+  font-family: "Space Mono";
 }

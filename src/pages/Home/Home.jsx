@@ -18,8 +18,8 @@ const Home = () => {
             <div className={css["hero-box"]}>
               <h1 className={css.hero__title}>MovieSearcher</h1>
               <p className={css.hero__text}>
-                Go to the <NavLink to="/movies">/movies</NavLink> page
-                and search around thosaunds of movies!
+                Go to the <NavLink to="/movies">/movies</NavLink> page and
+                search around thosaunds of movies!
               </p>
             </div>
           </div>

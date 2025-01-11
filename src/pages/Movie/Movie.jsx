@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import Header from "../../components/Header/Header";
 import MovieDetails from "../../components/MovieDetails/MovieDetails";
 import css from "./Movie.module.css";
+import { useNavigate } from "react-router-dom";
 
 const Movie = () => {
   const { id } = useParams();

@@ -5,11 +5,11 @@ import axios from "../../axiosConfig.js";
 import css from "./Recomendations.module.css";
 import CardTips from "../CardTips/CardTips.jsx";
 import Loader from "../Loader/Loader.jsx";
+import searchMovies from "../../utils/searchMovies.js";
 
-const Recomendations = () => {
-  const [data, setData] = useState([]);
+const Recomendations = ({ data, setData, page, setPage, value }) => {
   const [focusedOn, setFocusedOn] = useState({});
-  const [page, setPage] = useState(1);
+
   const handleOutsideClick = useCallback((e) => {
     if (!e.target.dataset.cardTips) {
       setFocusedOn({});
@@ -82,8 +82,12 @@ const Recomendations = () => {
         observer.observe(targetElem.current);
       }
     }
+    async function getSearchData() {
+      const newData = await searchMovies(page, value);
+      setData(page === 1 ? newData.data.data : [...data, ...newData.data.data]);
+    }
     // console.log("alalalal");
-    getData();
+    value ? getSearchData() : getData();
   }, [page]);
 
   return (
